@@ -19,7 +19,7 @@ const Register = () => {
   const validationSchema = Yup.object({
     username: Yup.string().required('Kullanıcı adı gerekli'),
     email: Yup.string().email('Geçersiz email').required('Email gerekli'),
-    password: Yup.string().min(6, 'En az 6 karakter olmalı').required('Şifre gerekli'),
+    password: Yup.string().min(8, 'En az 8 karakter olmalı').required('Şifre gerekli'),
     confirmPassword: Yup.string()
       .oneOf([Yup.ref('password'), null], 'Şifreler eşleşmeli')
       .required('Şifre tekrarı gerekli'),
